@@ -1,9 +1,21 @@
-import "./App.css";
+import "./base.css";
+import "./index.css";
+
+// CSS
 
 // book list component
 function BookList() {
   return (
-    <section>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       <Book />
     </section>
   );
