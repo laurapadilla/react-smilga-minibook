@@ -24,7 +24,7 @@ function BookList() {
 // book component
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image />
       <Title />
       <Author />
