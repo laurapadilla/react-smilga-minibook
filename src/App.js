@@ -1,54 +1,51 @@
 import "./base.css";
 import "./index.css";
 
-// CSS
-
-// book list component
+// BOOK LIST COMPONENT
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
-// book component
-const Book = () => {
+// set up variables
+const firstBook = {
+  img:
+    "https://images-na.ssl-images-amazon.com/images/I/817T4J3dzhL._AC_UL200_SR200,200_.jpg",
+  title: "If Animals Kissed Goodnight",
+  author: "Ann Paul",
+};
+
+const secondBook = {
+  img:
+    "https://images-na.ssl-images-amazon.com/images/I/81LYYbsEPeL._AC_UL200_SR200,200_.jpg",
+  title: "The Vanishing Half",
+  author: "Brit Bennett",
+};
+
+// BOOK COMPONENT - this will be passed down to the BookList component at the top
+const Book = ({ img, title, author }) => {
+  // you can destructure each prop so you don't have to write props.title, etc
+  // const { img, title, author } = props;
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={img} alt="Book Cover for If Animals Kissed Goodnight " />
+      <h1>{title}</h1>
+      <p>{author}</p>
     </article>
   );
 };
-
-const Image = () => {
-  return (
-    <img
-      src="https://images-na.ssl-images-amazon.com/images/I/817T4J3dzhL._AC_UL200_SR200,200_.jpg"
-      alt="Book Cover for If Animals Kissed Goodnight "
-    />
-  );
-};
-
-// implicit return
-const Title = () => <h1>If Animals Kissed Goodnight</h1>;
-// implicit return
-const Author = () => (
-  <p style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-    Ann Paul
-  </p>
-);
 
 // main app component
 function App() {

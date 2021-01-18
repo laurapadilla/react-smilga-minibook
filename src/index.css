@@ -1,6 +1,7 @@
 body {
   font-family: "Helvetica Neue";
   background-color: #f1f5f8;
+  font-size: 16px;
 }
 
 .booklist {
@@ -10,6 +11,7 @@ body {
   display: grid;
   gap: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
@@ -23,5 +25,11 @@ body {
 }
 
 .book h1 {
+  margin-top: 1rem;
+}
+
+.book p {
+  color: #617d98;
+  font-size: 0.875rem;
   margin-top: 0.5rem;
 }
