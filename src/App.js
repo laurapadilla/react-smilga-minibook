@@ -9,7 +9,15 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        {/* children props go in between the component tags */}
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          cum nisi ut minima voluptatem nam libero numquam placeat molestias
+          iste?
+        </p>
+      </Book>
+
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -35,14 +43,15 @@ const secondBook = {
 };
 
 // BOOK COMPONENT - this will be passed down to the BookList component at the top
-const Book = ({ img, title, author }) => {
+const Book = (props) => {
   // you can destructure each prop so you don't have to write props.title, etc
-  // const { img, title, author } = props;
+  const { img, title, author, children } = props;
   return (
     <article className="book">
       <img src={img} alt="Book Cover for If Animals Kissed Goodnight " />
       <h1>{title}</h1>
-      <p>{author}</p>
+      <h4>{author}</h4>
+      {children}
     </article>
   );
 };
